@@ -1,5 +1,12 @@
 version: '3.0'
 services:
+  duckling:
+    restart: always
+    image: "rasa/duckling:latest"
+    ports:
+      - "8000:8000"
+    command: [ "duckling-example-exe", "--no-access-log", "--no-error-log" ]
+
   rasa:
     container_name: "rasa_server"
     build:
@@ -21,13 +28,10 @@ services:
     - ./actions:/app/actions
     ports:
     - 5055:5055
-  rasa-x:
-    container_name: "rasa_x"
-    build:
-      context: rasa_x
-    ports:
-      - "5002:5002"
-    volumes:
-      - ./:/app
-    command: rasa x --no-prompt
 
+  chatbot_ui:
+    container_name: "chatbot_ui"
+    build:
+      context: frontend
+    ports:
+      - "3000:3000"

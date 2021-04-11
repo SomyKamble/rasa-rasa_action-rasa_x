@@ -13,7 +13,7 @@ COPY ./models /app/models
 
 VOLUME /app
 VOLUME /app/data
-VOLUME /app/data/models
+VOLUME /app/models
 
 
 CMD ["run","-m","/app/models","--enable-api","cors","*","--debug"]
