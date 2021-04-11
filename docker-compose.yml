@@ -28,9 +28,10 @@ services:
     ports:
     - 5055:5055
 
-  chatbot_ui:
-    container_name: "chatbot_ui"
-    build:
-      context: frontend
+  rasa_x:
+    container_name: "rasa-x"
+    image: rasa/rasa-x:latest
     ports:
-      - "3000:3000"
+    - 5002:5002
+    command:
+      - x --no-prompts
