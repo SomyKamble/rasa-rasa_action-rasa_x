@@ -8,7 +8,7 @@ COPY . /app
 COPY ./data /app/data
 COPY ./models /app/models
 
-#RUN rasa train
+RUN rasa train
 #RUN pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
 
 VOLUME /app
