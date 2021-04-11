@@ -1,12 +1,5 @@
 version: '3.0'
 services:
-  duckling:
-    restart: always
-    image: "rasa/duckling:latest"
-    ports:
-      - "8000:8000"
-    command: [ "duckling-example-exe", "--no-access-log", "--no-error-log" ]
-
   rasa:
     container_name: "rasa_server"
     build:
@@ -34,4 +27,11 @@ services:
     ports:
     - 5002:5002
     command:
-      - x --no-prompts
+      - rasa x --no-prompts
+
+  duckling:
+    restart: always
+    image: "rasa/duckling:latest"
+    ports:
+      - "8000:8000"
+    command: [ "duckling-example-exe", "--no-access-log", "--no-error-log" ]
