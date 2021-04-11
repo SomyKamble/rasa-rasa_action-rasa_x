@@ -10,6 +10,8 @@ services:
     - ./:/app
     command:
       - run
+    depends_on:
+      - rasa-x
 
 
   action-server:
@@ -21,13 +23,13 @@ services:
     ports:
     - 5055:5055
 
-  rasa_x:
-    container_name: "rasa-x"
+  rasa-x:
     image: rasa/rasa-x:latest
     ports:
-    - 5002:5002
-    command:
-      - rasa x --no-prompts
+      - "5002:5002"
+    volumes:
+      - ./:/app
+    command: rasa x --no-prompt
 
   duckling:
     restart: always
