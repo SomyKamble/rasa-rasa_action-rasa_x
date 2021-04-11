@@ -1,22 +1,14 @@
 FROM rasa/rasa:latest-full
 
+ENV BOT_ENV=production
+COPY . /var/www
+WORKDIR /var/www
 
-
-WORKDIR /app
-
-COPY . /app
-COPY ./data /app/data
-#COPY ./models /app/models
-
+USER ${CURRENT_UID}
+RUN pip3 install rasa
 RUN rasa train
-#RUN pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
 
-VOLUME /app
-VOLUME /app/data
-VOLUME /app/models
-
-
-CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug"]
+ENTRYPOINT [ "rasa", "run", "-p", "8080", "--enable-api", "--cors", "*", "--debug" ]
 
 
 
