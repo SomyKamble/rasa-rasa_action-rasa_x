@@ -10,12 +10,12 @@ COPY ./data/ /app/data/
 
 COPY ./actions/ /app/actions/
 
-RUN rasa train
 
-#ENV BOT_ENV=production
+ENV BOT_ENV=production
 #COPY . /var/www
 #WORKDIR /var/www
-#
+RUN rasa train
+
 #USER ${CURRENT_UID}
 #RUN pip3 install rasa
 #RUN rasa train

@@ -8,8 +8,8 @@ services:
       - ./:/app
     ports:
     - 5005:5005
-    command:
-      - run
+    command: ["run","-m","/app/models","--enable-api","--cors","*","--debug" ]
+
 
   action-server:
     container_name: "action_server"
