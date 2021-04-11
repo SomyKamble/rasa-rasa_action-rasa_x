@@ -17,8 +17,7 @@ services:
     - ./:/app
     command:
       - run
-    depends_on:
-      - rasa-x
+
 
   action-server:
     container_name: "action_server"
