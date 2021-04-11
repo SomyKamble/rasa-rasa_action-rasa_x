@@ -6,6 +6,8 @@ services:
       context: .
     volumes:
       - ./:/app
+    ports:
+    - 5005:5005
     command:
       - run
 

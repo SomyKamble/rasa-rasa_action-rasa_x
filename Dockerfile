@@ -10,6 +10,8 @@ COPY ./data/ /app/data/
 
 COPY ./actions/ /app/actions/
 
+RUN rasa train
+
 #ENV BOT_ENV=production
 #COPY . /var/www
 #WORKDIR /var/www
