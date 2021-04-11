@@ -22,9 +22,3 @@ services:
     - 5055:5055
 
 
-  duckling:
-    restart: always
-    image: "rasa/duckling:latest"
-    ports:
-      - "8000:8000"
-    command: [ "duckling-example-exe", "--no-access-log", "--no-error-log" ]
