@@ -4,9 +4,10 @@ services:
     container_name: "rasa_server"
     build:
       context: .
-
-
-
+    volumes:
+      - ./:/app
+    command:
+      - run
 
   action-server:
     container_name: "action_server"
