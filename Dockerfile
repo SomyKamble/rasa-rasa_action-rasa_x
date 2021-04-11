@@ -6,7 +6,7 @@ COPY . /app
 
 COPY ./data/ /app/data/
 
-COPY ./models/ /app/models/
+#COPY ./models/ /app/models/
 
 COPY ./actions/ /app/actions/
 
