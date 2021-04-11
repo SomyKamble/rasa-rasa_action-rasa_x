@@ -1,0 +1,33 @@
+version: '3.0'
+services:
+  rasa:
+    container_name: "rasa_server"
+    build:
+      context: .
+    ports:
+    - 5005:5005
+    volumes:
+    - ./:/app
+    command:
+      - run
+    depends_on:
+      - rasa-x
+
+  action-server:
+    container_name: "action_server"
+    build:
+      context: actions
+    volumes:
+    - ./actions:/app/actions
+    ports:
+    - 5055:5055
+  rasa-x:
+    container_name: "rasa_x"
+    build:
+      context: rasa_x
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./:/app
+    command: rasa x --no-prompt
+

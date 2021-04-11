@@ -1,0 +1,4 @@
+
+recognizers-text-suite
+pyodbc
+sqlalchemy
