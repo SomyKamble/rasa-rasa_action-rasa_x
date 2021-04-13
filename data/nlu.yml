@@ -1,5 +1,25 @@
 version: "2.0"
 nlu:
+
+#- synonym: body
+#  examples: |
+#    - body weight
+#    - body fat
+#    - body bmi
+#    - wieght
+#    - fat
+#    - bmi
+#
+#- synonym: heart_rate
+#  examples: |
+#    - cardio
+#    - resting heart rate
+#    - fat burn
+#    - my heart
+#    - cardic
+#    - cardic detials
+#
+
 - intent: greet
   examples: |
     - hey
@@ -88,12 +108,12 @@ nlu:
     - give me the time now
     - whats the time now
     - time
-- intent: request_name
-  examples: |
-    - can you tell [rem](workout_type) cycle
-    - what was my [rem](workout_type) cycle
-    - can you please tell me my [rem](workout_type) cycle
-    - [rem](workout_type) cycle
+#- intent: request_name
+#  examples: |
+#    - can you tell [rem](workout_type) cycle
+#    - what was my [rem](workout_type) cycle
+#    - can you please tell me my [rem](workout_type) cycle
+#    - [rem](workout_type) cycle
 - intent: weather
   examples: |
     - can you tell me the temperature of [berlin](city)
@@ -101,6 +121,45 @@ nlu:
     - can you please tell me the temperature of [new york](city)
     - temperature of [nagpur](city)
     - temperature of [jaipur](city)
-- intent: country
+
+- intent: act
   examples: |
-    - what is country
+    - can you tell me about my [fat]{"entity":"body","value":"body"}
+    - can you tell me my [wieght]{"entity":"body","value":"body"}
+    - can you tell me my [bmi]{"entity":"body","value":"body"}
+    - whats my [bmi]{"entity":"body","value":"body"}
+    - whats my [wieght]{"entity":"body","value":"body"}
+    - my [fat]{"entity":"body","value":"body"}
+    - my [bmi]{"entity":"body","value":"body"}
+    - my [wieght]{"entity":"body","value":"body"}
+    - my [fat]{"entity":"body","value":"body"}
+    - can you tell me about my [heart rate]{"entity":"body","value":"heart_rate"}
+    - whats my [cardic detials]{"entity":"body","value":"heart_rate"}
+    - [heart rate]{"entity":"body","value":"heart_rate"}
+    - whats my [heart data]{"entity":"body","value":"heart_rate"}
+    - whats my [resting heart rate ]{"entity":"body","value":"heart_rate"}
+    - what is my [calories count]{"entity":"body","value":"nutrition"}
+    - what is my [calorie count]{"entity":"body","value":"nutrition"}
+    - my [calorie count]{"entity":"body","value":"nutrition"}
+    - [calorie count]{"entity":"body","value":"nutrition"}
+    - [calories]{"entity":"body","value":"nutrition"}
+    - [calorie count]{"entity":"body","value":"nutrition"}
+    - whats my [calorie Burn]{"entity":"body","value":"nutrition"}
+    - How much [calorie]{"entity":"body","value":"nutrition"} i consumed
+    - whats my [Sleep]{"entity":"body","value":"sleep"} data
+    - whats my [sleep]{"entity":"body","value":"sleep"} count
+    - my [sleep]{"entity":"body","value":"sleep"} like
+    - [sleep]{"entity":"body","value":"sleep"}
+    - what is my [rem]{"entity":"body","value":"sleep"}
+    - my [rem]{"entity":"body","value":"sleep"}
+    - [deep sleep]{"entity":"body","value":"sleep"}
+    - whats [activity]{"entity":"body","value":"activity"}
+    - [activity]{"entity":"body","value":"activity"}
+    - tell me [calories burn]{"entity":"body","value":"activity"}
+    - how much [calories burned]{"entity":"body","value":"activity"}
+    - [calories burned]{"entity":"body","value":"activity"}
+    - whats my [calories burned]{"entity":"body","value":"activity"}
+    - whats my [step count]{"entity":"body","value":"activity"}
+    - my [step count]{"entity":"body","value":"activity"}
+    - tell me my [distance]{"entity":"body","value":"activity"} travlled
+    - what is my [floors]{"entity":"body","value":"activity"}

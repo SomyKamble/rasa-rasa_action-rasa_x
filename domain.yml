@@ -27,17 +27,21 @@ intents:
     use_entities: true
 - give:
     use_entities: true
-- request_name:
-    use_entities: true
 - weather:
     use_entities: true
 - count:
     use_entities: true
 - country:
     use_entities: true
+- act:
+    use_entities: true
+- request_name:
+    use_entities: true
 entities:
 - city
 - workout_type
+- act
+- body
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot
@@ -60,6 +64,11 @@ slots:
     auto_fill: true
     influence_conversation: false
   city:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  body:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -97,6 +106,7 @@ actions:
 - action_ask_last_name
 - action_get_rem_cycles
 - get_temp
+- get_act
 forms:
   name_form:
     first_name:

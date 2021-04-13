@@ -47,9 +47,12 @@ stories:
   - slot_was_set:
     - city: nagpur
   - action: get_temp
-- story: Untitled Story
+- story: active
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather
-  - action: get_temp
+  - intent: act
+    entities:
+      - body: fat
+  - slot_was_set:
+      - body: fat
+  - action: get_act
+

@@ -15,6 +15,7 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 #from .sql_file_rem import serve
 import json
+from .sqlact import activity_count
 
 class ActionHelloWorld(Action):
 
@@ -134,4 +135,27 @@ class Temperature(Action):
         else:
             dispatcher.utter_message(text="city not found")
         dispatcher.utter_message(text=f"the temperature of {city}")
+        return []
+
+class Activity(Action):
+
+    def name(self) -> Text:
+        return "get_act"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        act=tracker.get_slot("body")
+        a = activity_count(str(act))
+        if a is not None:
+            print(act)
+            a=activity_count(str(act))
+            print(a.iloc[0])
+            dispatcher.utter_message(text=f"Your Latest {act} details are \n {a.iloc[0]}")
+        else:
+            pass
+
+        dispatcher.utter_message(text=f"{a}")
+
         return []
