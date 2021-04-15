@@ -95,7 +95,7 @@ class remcycles(Action):
 
         first_name=tracker.get_slot("first_name")
         last_name = tracker.get_slot("last_name")
-        remi = serve(first_name,last_name)
+        #remi = serve(first_name,last_name)
 
         dispatcher.utter_message(text=f"So {first_name} {last_name} rem cycle in hrs is {remi}")
 

@@ -88,7 +88,7 @@ responses:
   utter_ask_name:
   - text: what is your name?
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am a bot, powered by Sabertooth.
   utter_ask_name_form_first_name:
   - text: what is your first name?
   utter_submit:

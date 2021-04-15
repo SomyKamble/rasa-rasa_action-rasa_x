@@ -1,5 +1,6 @@
 import pyodbc
 import sqlalchemy
+import pymssql
 from sqlalchemy import create_engine
 import pandas as pd
 
@@ -11,11 +12,13 @@ import pandas as pd
 
 def activity_count(act):
 
-    server = "DESKTOP-K23NHA9"
+    # server = "DESKTOP-K23NHA9"
+    #
+    # database = "zan&luka"
 
-    database = "zan&luka"
+    engine = create_engine('mssql+pymssql://sqlserver:$So9423637191@34.71.157.91/zan&luka')
 
-    engine = create_engine('mssql+pyodbc://' + server + '/' + database + '?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server')
+    # engine = create_engine('mssql+pyodbc://' + server + '/' + database + '?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server')
 
 
     connection = engine.connect()

@@ -129,7 +129,10 @@ nlu:
     - can you tell me my [bmi]{"entity":"body","value":"body"}
     - whats my [bmi]{"entity":"body","value":"body"}
     - whats my [wieght]{"entity":"body","value":"body"}
+    - whats my [weight]{"entity":"body","value":"body"}
+    - [weight]{"entity":"body","value":"body"} detials
     - my [fat]{"entity":"body","value":"body"}
+    - whats my [fat]{"entity":"body","value":"body"}
     - my [bmi]{"entity":"body","value":"body"}
     - my [wieght]{"entity":"body","value":"body"}
     - my [fat]{"entity":"body","value":"body"}
