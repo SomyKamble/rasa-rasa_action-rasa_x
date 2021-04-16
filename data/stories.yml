@@ -2,10 +2,12 @@ version: "2.0"
 stories:
 - story: happy path
   steps:
+  - action: utter_greet
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
+  - action: utter_ok
 - story: sad path 1
   steps:
   - intent: greet
@@ -51,8 +53,7 @@ stories:
   steps:
   - intent: act
     entities:
-      - body: fat
+    - body: fat
   - slot_was_set:
-      - body: fat
+    - body: fat
   - action: get_act
-

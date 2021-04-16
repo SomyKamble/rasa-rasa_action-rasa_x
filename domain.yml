@@ -99,6 +99,8 @@ responses:
   - text: He is a good boy{city}
   utter_xyz:
   - text: this is germany
+  utter_ok:
+  - text: it was great talking to you
 actions:
 - action_time_now
 - action_recive_name

@@ -148,6 +148,7 @@ class Activity(Action):
 
         act=tracker.get_slot("body")
         a = activity_count(str(act))
+
         if a is not None:
             print(act)
             a=activity_count(str(act))
