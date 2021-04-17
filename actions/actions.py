@@ -156,7 +156,8 @@ class Activity(Action):
             print(a.iloc[0])
             dispatcher.utter_message(text=f"Your Latest {act} details are \n {a.iloc[0]}")
         else:
-            dispatcher.utter_message(text=f"{a}")
+            pass
+            #dispatcher.utter_message(text=f"{act}")
             #pass
 
 

@@ -1,4 +1,4 @@
-import pyodbc
+
 import sqlalchemy
 import pymssql
 from sqlalchemy import create_engine
@@ -39,3 +39,6 @@ def activity_count(act):
     else:
         return "not found"
 
+
+
+print(activity_count("body"))
