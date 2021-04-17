@@ -88,7 +88,8 @@ responses:
   utter_ask_name:
   - text: what is your name?
   utter_iamabot:
-  - text: I am a bot, powered by Sabertooth.
+  - image: https://media.glassdoor.com/sqll/3246589/sabertooth-technologies-squarelogo-1584085286311.png
+    text: I am a bot, powered by Sabertooth.
   utter_ask_name_form_first_name:
   - text: what is your first name?
   utter_submit:
