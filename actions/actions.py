@@ -148,16 +148,17 @@ class Activity(Action):
 
         act=tracker.get_slot("body")
         dispatcher.utter_message(text=f"{act}")
-        # a = activity_count(str(act))
-        #
-        # if a is not None:
-        #     print(act)
-        #     a=activity_count(str(act))
-        #     print(a.iloc[0])
-        #     dispatcher.utter_message(text=f"Your Latest {act} details are \n {a.iloc[0]}")
-        # else:
-        #     pass
-        #
-        # dispatcher.utter_message(text=f"{a}")
+        a = activity_count(str(act))
+
+        if a is not None:
+            print(act)
+            a=activity_count(str(act))
+            print(a.iloc[0])
+            dispatcher.utter_message(text=f"Your Latest {act} details are \n {a.iloc[0]}")
+        else:
+            dispatcher.utter_message(text=f"{a}")
+            #pass
+
+
 
         return []
