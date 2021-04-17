@@ -124,6 +124,8 @@ nlu:
 
 - intent: act
   examples: |
+    - tell me my [body]{"entity":"body","value":"body"} data
+    - my [body]{"entity":"body","value":"body"} data
     - can you tell me about my [fat]{"entity":"body","value":"body"}
     - can you tell me my [wieght]{"entity":"body","value":"body"}
     - can you tell me my [bmi]{"entity":"body","value":"body"}
